@@ -230,14 +230,37 @@
     <nav class="navbar fixed w-full z-10">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="text-white font-bold text-2xl">Paulo<span class="text-blue-300">Nioac</span></div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#home" class="text-white hover:text-blue-300 transition">Início</a>
-                <a href="#about" class="text-white hover:text-blue-300 transition">Sobre</a>
-                <a href="#portfolio" class="text-white hover:text-blue-300 transition">Portfólio</a>
-                <a href="#blog" class="text-white hover:text-blue-300 transition">Blog</a>
-                <a href="#skills" class="text-white hover:text-blue-300 transition">Habilidades</a>
-                <a href="#testimonials" class="text-white hover:text-blue-300 transition">Depoimentos</a>
-                <a href="#contact" class="text-white hover:text-blue-300 transition">Contato</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="text-white hover:text-blue-300 transition" data-translate="nav-home">Início</a>
+                <a href="#about" class="text-white hover:text-blue-300 transition" data-translate="nav-about">Sobre</a>
+                <a href="#portfolio" class="text-white hover:text-blue-300 transition" data-translate="nav-portfolio">Portfólio</a>
+                <a href="#blog" class="text-white hover:text-blue-300 transition" data-translate="nav-blog">Blog</a>
+                <a href="#skills" class="text-white hover:text-blue-300 transition" data-translate="nav-skills">Habilidades</a>
+                <a href="#testimonials" class="text-white hover:text-blue-300 transition" data-translate="nav-testimonials">Depoimentos</a>
+                <a href="#contact" class="text-white hover:text-blue-300 transition" data-translate="nav-contact">Contato</a>
+                
+                <!-- Seletor de Idiomas -->
+                <div class="relative ml-4">
+                    <button id="languageSelector" class="text-white hover:text-blue-300 transition flex items-center space-x-1 bg-white bg-opacity-10 px-3 py-2 rounded-lg">
+                        <span id="currentFlag">🇧🇷</span>
+                        <span id="currentLang">PT</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="languageDropdown" class="absolute right-0 mt-2 bg-white rounded-lg shadow-lg py-2 w-32 hidden">
+                        <button onclick="changeLanguage('pt')" class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 w-full text-left">
+                            <span>🇧🇷</span>
+                            <span class="text-gray-800">Português</span>
+                        </button>
+                        <button onclick="changeLanguage('en')" class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 w-full text-left">
+                            <span>🇺🇸</span>
+                            <span class="text-gray-800">English</span>
+                        </button>
+                        <button onclick="changeLanguage('es')" class="flex items-center space-x-2 px-4 py-2 hover:bg-gray-100 w-full text-left">
+                            <span>🇪🇸</span>
+                            <span class="text-gray-800">Español</span>
+                        </button>
+                    </div>
+                </div>
             </div>
             <button class="md:hidden text-white focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
@@ -250,13 +273,13 @@
         <div class="container mx-auto px-4 py-20 md:py-0">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-3/5 hero-content animate-fadeInUp">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Transformando dados em soluções visuais de alto impacto</h1>
-                    <p class="text-xl md:text-2xl mb-8 text-blue-200">
-                        Paulo Nioac é um Analista de Dados e Designer Visual que une números e narrativas. Com uma carreira abrangendo finanças, energia, governo e design, seu trabalho transforma dados complexos em insights acionáveis e visuais impactantes.
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4" data-translate="hero-title">Turning data into intelligent, user-centered solutions</h1>
+                    <p class="text-xl md:text-2xl mb-8 text-blue-200" data-translate="hero-description">
+                        I'm a Data Analyst and AI Product Builder who bridges statistics, generative AI, UX, and visual design. With a multidisciplinary background in finance, energy, government, and design, I transform complex data into actionable insights and intuitive experiences.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="#portfolio" class="btn-primary px-6 py-3 rounded-full font-semibold flex items-center">
-                            <i class="fas fa-folder-open mr-2"></i> Ver Projetos
+                            <i class="fas fa-folder-open mr-2"></i> <span data-translate="btn-projects">Ver Projetos</span>
                         </a>
                         <a href="https://www.linkedin.com/in/paulo-nioac-data-analyst-bi/" target="_blank" class="btn-outline px-6 py-3 rounded-full font-semibold flex items-center">
                             <i class="fab fa-linkedin mr-2"></i> LinkedIn
@@ -1075,6 +1098,118 @@
     </footer>
 
     <script>
+        // Sistema de Tradução Trilíngue
+        const translations = {
+            pt: {
+                // Navegação
+                'nav-home': 'Início',
+                'nav-about': 'Sobre',
+                'nav-portfolio': 'Portfólio',
+                'nav-blog': 'Blog',
+                'nav-skills': 'Habilidades',
+                'nav-testimonials': 'Depoimentos',
+                'nav-contact': 'Contato',
+                
+                // Hero Section
+                'hero-title': 'Transformando dados em soluções inteligentes e centradas no usuário',
+                'hero-description': 'Sou um Analista de Dados e Construtor de Produtos de IA que conecta estatística, IA generativa, UX e design visual. Com experiência multidisciplinar em finanças, energia, governo e design, transformo dados complexos em insights acionáveis e experiências intuitivas.',
+                'btn-projects': 'Ver Projetos'
+            },
+            en: {
+                // Navigation
+                'nav-home': 'Home',
+                'nav-about': 'About',
+                'nav-portfolio': 'Portfolio',
+                'nav-blog': 'Blog',
+                'nav-skills': 'Skills',
+                'nav-testimonials': 'Testimonials',
+                'nav-contact': 'Contact',
+                
+                // Hero Section
+                'hero-title': 'Turning data into intelligent, user-centered solutions',
+                'hero-description': 'I\'m a Data Analyst and AI Product Builder who bridges statistics, generative AI, UX, and visual design. With a multidisciplinary background in finance, energy, government, and design, I transform complex data into actionable insights and intuitive experiences.',
+                'btn-projects': 'View Projects'
+            },
+            es: {
+                // Navegación
+                'nav-home': 'Inicio',
+                'nav-about': 'Acerca',
+                'nav-portfolio': 'Portafolio',
+                'nav-blog': 'Blog',
+                'nav-skills': 'Habilidades',
+                'nav-testimonials': 'Testimonios',
+                'nav-contact': 'Contacto',
+                
+                // Hero Section
+                'hero-title': 'Convirtiendo datos en soluciones inteligentes centradas en el usuario',
+                'hero-description': 'Soy un Analista de Datos y Constructor de Productos de IA que conecta estadística, IA generativa, UX y diseño visual. Con experiencia multidisciplinaria en finanzas, energía, gobierno y diseño, transformo datos complejos en insights accionables y experiencias intuitivas.',
+                'btn-projects': 'Ver Proyectos'
+            }
+        };
+
+        // Configuração de idiomas
+        const languageConfig = {
+            pt: { flag: '🇧🇷', name: 'PT' },
+            en: { flag: '🇺🇸', name: 'EN' },
+            es: { flag: '🇪🇸', name: 'ES' }
+        };
+
+        // Idioma atual
+        let currentLanguage = localStorage.getItem('language') || 'pt';
+
+        // Função para trocar idioma
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            
+            // Atualizar seletor de idioma
+            document.getElementById('currentFlag').textContent = languageConfig[lang].flag;
+            document.getElementById('currentLang').textContent = languageConfig[lang].name;
+            
+            // Aplicar traduções
+            applyTranslations();
+            
+            // Fechar dropdown
+            document.getElementById('languageDropdown').classList.add('hidden');
+        }
+
+        // Função para aplicar traduções
+        function applyTranslations() {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                    element.textContent = translations[currentLanguage][key];
+                }
+            });
+        }
+
+        // Toggle do dropdown de idiomas
+        document.getElementById('languageSelector').addEventListener('click', function() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Fechar dropdown ao clicar fora
+        document.addEventListener('click', function(event) {
+            const selector = document.getElementById('languageSelector');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (!selector.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Inicializar idioma ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurar idioma inicial
+            document.getElementById('currentFlag').textContent = languageConfig[currentLanguage].flag;
+            document.getElementById('currentLang').textContent = languageConfig[currentLanguage].name;
+            
+            // Aplicar traduções
+            applyTranslations();
+        });
+
         // Smooth scrolling para links de navegação
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
