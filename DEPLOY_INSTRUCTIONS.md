@@ -33,6 +33,8 @@ Este é o portfólio completo do Paulo Nioac, um site responsivo e trilíngue (P
 Certifique-se de que todos estes arquivos estão no seu servidor:
 ```
 ├── index.html (arquivo principal)
+├── portfolio.php (arquivo PHP auxiliar)
+├── .htaccess (configurações do servidor)
 ├── .gitignore
 ├── README.md
 └── Trae/
