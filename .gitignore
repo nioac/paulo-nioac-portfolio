@@ -1,0 +1,34 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.tmp
+*.temp
+*~
+
+# Logs
+*.log
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Arquivos do VS Code
+.vscode/
+*.code-workspace
+
+# Arquivos do Windows
+desktop.ini
+
+# Cache
+.cache/
+
+# Arquivos de desenvolvimento
+node_modules/
+.env
+.env.local
+
+# Arquivos de build (se houver)
+dist/
+build/
