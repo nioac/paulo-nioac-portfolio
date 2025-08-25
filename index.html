@@ -1103,6 +1103,59 @@
         </div>
     </section>
 
+    <!-- Websites Section -->
+    <section id="websites" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl font-bold mb-16 text-center md:text-left">Websites</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Walmart -->
+                <div class="card relative">
+                    <div class="p-6 bg-gray-100 rounded-lg flex items-center justify-between cursor-pointer" onclick="toggleDescription(this)">
+                        <i class="fas fa-plus text-2xl text-blue-600 mr-4"></i>
+                        <h3 class="text-xl font-bold">Walmart</h3>
+                    </div>
+                    <div class="description hidden p-6 bg-white border-t">
+                        <p>Sistema de detecção de fraudes. <a href="https://nioac.com/walmart" target="_blank" class="text-blue-600 hover:underline">Acessar</a></p>
+                    </div>
+                </div>
+                
+                <!-- Mitra -->
+                <div class="card relative">
+                    <div class="p-6 bg-gray-100 rounded-lg flex items-center justify-between cursor-pointer" onclick="toggleDescription(this)">
+                        <i class="fas fa-plus text-2xl text-blue-600 mr-4"></i>
+                        <h3 class="text-xl font-bold">Mitra</h3>
+                    </div>
+                    <div class="description hidden p-6 bg-white border-t">
+                        <p>Tabular foundation model. <a href="https://nioac.com/mitra" target="_blank" class="text-blue-600 hover:underline">Acessar</a></p>
+                    </div>
+                </div>
+                
+                <!-- DeIA -->
+                <div class="card relative">
+                    <div class="p-6 bg-gray-100 rounded-lg flex items-center justify-between cursor-pointer" onclick="toggleDescription(this)">
+                        <i class="fas fa-plus text-2xl text-blue-600 mr-4"></i>
+                        <h3 class="text-xl font-bold">Descentralized AI</h3>
+                    </div>
+                    <div class="description hidden p-6 bg-white border-t">
+                        <p>O futuro da inteligência artificial. <a href="https://nioac.com/deia" target="_blank" class="text-blue-600 hover:underline">Acessar</a></p>
+                    </div>
+                </div>
+                
+                <!-- Revoluções -->
+                <div class="card relative">
+                    <div class="p-6 bg-gray-100 rounded-lg flex items-center justify-between cursor-pointer" onclick="toggleDescription(this)">
+                        <i class="fas fa-plus text-2xl text-blue-600 mr-4"></i>
+                        <h3 class="text-xl font-bold">Revoluções Industriais</h3>
+                    </div>
+                    <div class="description hidden p-6 bg-white border-t">
+                        <p>Impacto das inovações tecnológicas. <a href="https://nioac.com/revolucoes_2/" target="_blank" class="text-blue-600 hover:underline">Acessar</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
@@ -1258,6 +1311,24 @@
                 }, 1000);
             });
         });
+    </script>
+    <script>
+    function toggleDescription(clickedElement) {
+    const allHeaders = document.querySelectorAll('#websites .card > div:first-child');
+    allHeaders.forEach(header => {
+        const desc = header.nextElementSibling;
+        const icon = header.querySelector('i');
+        if (header === clickedElement) {
+            desc.classList.toggle('hidden');
+            icon.classList.toggle('fa-plus');
+            icon.classList.toggle('fa-minus');
+        } else {
+            desc.classList.add('hidden');
+            icon.classList.add('fa-plus');
+            icon.classList.remove('fa-minus');
+        }
+    });
+}
     </script>
 </body>
 </html>
